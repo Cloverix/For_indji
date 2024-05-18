@@ -1,17 +1,16 @@
 ﻿#include <iostream>
+#include <vector>
+
+void increase(std::vector<int>& vec, int n) {
+	for (int i = 0; i < vec.size(); i++) {
+		vec[i] += n;
+	}
+}
 
 int main() {
-    int n;
-    std::cin >> n;
-    std::cout << "*\n";
-    for (int i = 0; i < n - 2; i++) {
-        std::cout << "*";
-        for (int j = 0; j < i + 1; j++) {
-            std::cout << " ";
-        }
-        std::cout << "*\n";
-    }
-    for (int i = 0; i < n + 1; i++) {
-        std::cout << "*";
-    }
+	std::vector<int> v = { 1, 2, 3, 4, 5 };
+	increase(v, 5);
+	for (int i = 0; i < v.size(); i++) {
+		std::cout << v[i] << " ";
+	}
 }
